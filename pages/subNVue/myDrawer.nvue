@@ -1,0 +1,176 @@
+<template>
+	<view style="margin-top: 1px;">
+		<uni-list style="width: 380px;">
+			<uni-list-item :clickable=false @click='listSelected(1)'/>
+			<uni-list-item :clickable=true @click='listSelected(1)' title="主页" :show-extra-icon="true" :extra-icon="homepageIcon"/>
+			<uni-list-item :clickable=true @click='listSelected(2)' title="个人资讯" :show-extra-icon="true" :extra-icon="personalIcon"/>
+			<uni-list-item :clickable=true @click='listSelected(3)' title="修改密码" :show-extra-icon="true" :extra-icon="passwordIcon"/>
+			<uni-list-item :clickable=true @click='listSelected(4)' title="未结明细" :show-extra-icon="true" :extra-icon="unsettledIcon"/>
+			<uni-list-item :clickable=true @click='listSelected(5)' title="今天已结" :show-extra-icon="true" :extra-icon="settledIcon"/>
+			
+			<uni-list-item :clickable=true @click='listSelected(10)' title="积分变动明细" :show-extra-icon="true" :extra-icon="reportIcon"/>
+			<uni-list-item :clickable=true @click='listSelected(11)' title="代理报表" :show-extra-icon="true" :extra-icon="reportIcon"/>
+			<uni-list-item :clickable=true @click='listSelected(12)' title="添加代理" :show-extra-icon="true" :extra-icon="addAgentIcon"/>
+			<uni-list-item :clickable=true @click='listSelected(7)' title="开奖结果" :show-extra-icon="true" :extra-icon="drawIcon"/>
+			<uni-list-item :clickable=true @click='listSelected(13)' title="下分设置" :show-extra-icon="true" :extra-icon="bankIcon"/>
+			<uni-list-item :clickable=true @click='listSelected(9)' title="规则" :show-extra-icon="true" :extra-icon="ruleIcon"/>
+			<uni-list-item :clickable=true @click='doLogout()' title="退出" :show-extra-icon="true" :extra-icon="logoutIcon"/>
+		</uni-list>
+	</view>
+</template>
+
+<script>
+	import {logout} from '../../common/api/index.js'
+	export default {
+		data () {
+			return {
+				homepageIcon: {
+					color: '#32418C',
+					size: '45',
+					type: 'home'
+				},
+				personalIcon: {
+					color: '#32418C',
+					size: '45',
+					type: 'person'
+				},
+				passwordIcon: {
+					color: '#474ea9',
+					size: '45',
+					type: 'locked'
+				},
+				unsettledIcon: {
+					color: '#474ea9',
+					size: '45',
+					type: 'bars'
+				},
+				settledIcon: {
+					color: '#474ea9',
+					size: '45',
+					type: 'list'
+				},
+				reportIcon: {
+					color: '#474ea9',
+					size: '45',
+					type: 'compose'
+				},
+				addAgentIcon: {
+					color: '#474ea9',
+					size: '45',
+					type: 'personadd'
+				},
+				drawIcon: {
+					color: '#474ea9',
+					size: '45',
+					type: 'star-filled'
+				},
+				kaijiangIcon: {
+					color: '#474ea9',
+					size: '45',
+					type: 'shop'
+				},
+				bankIcon: {
+					color: '#474ea9',
+					size: '45',
+					type: 'image'
+				},
+				ruleIcon: {
+					color: '#474ea9',
+					size: '45',
+					type: 'settings'
+				},
+				logoutIcon: {
+					color: '#474ea9',
+					size: '45',
+					type: 'download'
+				}
+			}
+		},
+		methods: {
+			doLogout(){
+				let token = getApp().checkLogin() // 判断是否登入
+				logout({'Authorization': 'Bearer ' + token}).then(result => {
+					if (result.status == 'SUCCESS') {
+						uni.removeStorageSync('token');
+						uni.navigateTo({
+							url:'/pages/mine/login'
+						})
+					}
+				})
+			},
+			listSelected :(i) =>{
+				uni.getCurrentSubNVue().hide()
+				switch (i){
+					case 1:
+						uni.reLaunch({
+							url:'/pages/index/index'
+						})
+						break
+					case 2:
+						uni.navigateTo({
+							url:'/pages/mine/info'
+						})
+						break
+					case 3:
+						uni.navigateTo({
+							url:'/pages/mine/password'
+						})
+						break
+					case 4:
+						uni.navigateTo({
+							url:'/pages/bill/index'
+						})
+						break
+					case 5:
+						uni.navigateTo({
+							url:'/pages/bill/settled'
+						})
+						break
+					case 6:
+						uni.navigateTo({
+							url:'/pages/bill/history'
+						})
+						break
+					case 7:
+						uni.navigateTo({
+							url:'/pages/dresult/index'
+						})
+						break
+					case 8:
+						location.href = 'http://168kai.com'
+						break
+					case 9:
+						uni.navigateTo({
+							url:'/pages/rule/index'
+						})
+						break
+					case 10:
+						uni.navigateTo({
+							url:'/pages/finance/index'
+						})
+						break
+					case 11:
+						uni.navigateTo({
+							url:'/pages/agent/index'
+						})
+						break
+					case 12:
+						uni.navigateTo({
+							url:'/pages/agent/form'
+						})
+						break
+					case 13:
+						uni.navigateTo({
+							url:'/pages/bank/form'
+						})
+						break
+					case 15:
+						uni.navigateTo({
+							url:'/pages/mine/login'
+						})
+						break
+				}
+			}
+		}
+	}
+</script>

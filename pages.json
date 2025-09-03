@@ -1,0 +1,220 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/mine/login",
+			"style": {
+				"navigationBarTitleText": "登入页面",
+				"app-plus": {"titleNView": false} 
+			}
+		},
+		{
+			"path": "pages/mine/regist",
+			"style": {
+				"navigationBarTitleText": "注册",
+				"app-plus": {"titleNView": true} 
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "主页",
+				"app-plus": {"titleNView": true} 
+			}
+		},
+		{
+			"path": "pages/game/index",
+			"style": {
+				"navigationBarTitleText": "游戏"
+			}
+		},
+		{
+			"path": "pages/dresult/index",
+			"style": {
+				"navigationBarTitleText": "开奖结果",
+				"app-plus": {"titleNView": true} 
+			}
+		},
+		{
+			"path": "pages/bill/index",
+			"style": {
+				"navigationBarTitleText": "未结明细",
+				"app-plus": {"titleNView": true} 
+			}
+		},
+		{
+			"path": "pages/bill/settled",
+			"style": {
+				"navigationBarTitleText": "今天已结",
+				"app-plus": {"titleNView": true} 
+			}
+		},
+		{
+			"path": "pages/bill/history",
+			"style": {
+				"navigationBarTitleText": "两周报表",
+				"app-plus": {"titleNView": true} 
+			}
+		},
+		{
+			"path": "pages/rule/index",
+			"style": {
+				"navigationBarTitleText": "规则"
+			}
+		},
+		{
+			"path": "pages/mine/password",
+			"style": {
+				"navigationBarTitleText": "修改密码",
+				"app-plus": {"titleNView": true} 
+			}
+		},
+		{
+			"path": "pages/mine/info",
+			"style": {
+				"navigationBarTitleText": "个人资讯",
+				"app-plus": {"titleNView": true}
+			}
+		},
+		{
+			"path": "pages/stat/index",
+			"style": {
+				"navigationBarTitleText": "统计",
+				"app-plus": {"titleNView": true}
+			}
+		},
+        {
+            "path" : "pages/room/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": ""
+            }
+            
+        },
+		{
+			"path": "pages/kefu/index",
+			"style": {
+				"navigationBarTitleText": "客服",
+				"app-plus": {"titleNView": true}
+			}
+		},
+        {
+            "path" : "pages/hall/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "游戏大厅",
+                "app-plus": {
+					"titleNView": {
+						"autoBackButton": false,
+						"buttons": [
+							{
+								"text":"\ue63c",
+								"fontSrc":"/static/fonts/iconfont.ttf",
+								"fontSize": "22px",
+								"float":"right",
+								"color":"#FFF"
+							}
+						]
+					},
+					"subNVues": [{
+						"id":"myDrawer",
+						"path": "pages/subNVue/myDrawer",
+						"type":"popup",
+						"style": {
+							"width":"50%"
+						}
+					}]
+				}
+            }
+        },
+		{
+            "path" : "pages/finance/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "积分变动明细",
+                "app-plus": {"titleNView": true} 
+            }
+            
+        },
+		{
+            "path" : "pages/agent/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "代理报表",
+                "app-plus": {"titleNView": true} 
+            }
+            
+        },
+		{
+            "path" : "pages/agent/form",
+            "style": {
+            	"navigationBarTitleText": "添加代理",
+            	"app-plus": {"titleNView": true} 
+            }
+        },
+		{
+            "path" : "pages/bank/form",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "app-plus": {"titleNView": true} 
+            }
+            
+        },
+		{
+            "path" : "pages/score/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "上下分",
+                "enablePullDownRefresh": false
+            }
+        },
+		{
+            "path" : "pages/coffer/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "小金库",
+                "enablePullDownRefresh": false
+            }
+            
+        },
+		{
+            "path" : "pages/lhc/am",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        },
+        {
+            "path" : "pages/agent/invite",
+            "style" : 
+            {
+                "navigationBarTitleText" : "设置邀请码"
+            }
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "K8",
+		"navigationBarBackgroundColor": "#272e5c",
+		"backgroundColor": "#F8F8F8",
+		"enablePullDownRefresh": false,
+		"app-plus": {
+			"softinputMode": "adjustResize",
+			"softinputNavBar": "none",
+			"compatible": {
+				"ignoreVersion": true
+			}
+		}		
+	},
+	"condition": { //模式配置，仅开发期间生效
+	    "current": 0, //当前激活的模式（list 的索引项）
+	    "list": [{
+	            "name": "swiper", //模式名称
+	            "path": "pages/mine/login", //启动页面，必选
+	            "query": "interval=4000&autoplay=false" //启动参数，在页面的onLoad函数里面得到。
+	        }
+	    ]
+	}
+}

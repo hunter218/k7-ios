@@ -1,0 +1,37 @@
+<template>
+	<view style="margin-top: 1px;">
+		<uni-list style="width: 300px;">
+			<uni-list-item :clickable=true @click="listSelected('JSFT', '极速飞艇', 'LM1')" title="极速飞艇" :show-extra-icon="true" :extra-icon="gameIcon"/>
+			<uni-list-item :clickable=true @click="listSelected('JSSC', '极速赛车', 'LM1')" title="极速赛车" :show-extra-icon="true" :extra-icon="gameIcon"/>
+			<uni-list-item :clickable=true @click="listSelected('AZXYS', '澳洲幸运10', 'LM1')" title="澳洲幸运10" :show-extra-icon="true" :extra-icon="gameIcon"/>
+		</uni-list>
+	</view>
+</template>
+
+<script>
+	export default {
+		data () {
+			return {
+				gameIcon: {
+					color: '#32418C',
+					size: '45',
+					type: 'bars'
+				}
+			}
+		},
+		methods: {
+			listSelected :(lottery, lotteryTitle, game) =>{
+				uni.getCurrentSubNVue().hide()
+				getApp().globalData.currentLottery = lottery;
+				getApp().globalData.currentGame = game;
+				getApp().globalData.currentLotteryTitle = lotteryTitle;
+				uni.navigateTo({
+					url:'/pages/game/index'
+				});
+			}
+		}
+	}
+</script>
+
+<sty
+</style>

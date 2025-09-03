@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@i5920/uni-socket": "^2.0.1"
+  }
+}
