@@ -1,9 +1,9 @@
 {
     "name" : "K7",
-    "appid" : "__UNI__090F324",
+    "appid" : "__UNI__F8408F0",
     "description" : "",
-    "versionName" : "2.0",
-    "versionCode" : 200,
+    "versionName" : "1.0.0",
+    "versionCode" : 100,
     "transformPx" : false,
     /* 5+App特有相关 */
     "app-plus" : {
@@ -99,7 +99,7 @@
                     "platforms" : "Android,iOS",
                     "url" : "https://ext.dcloud.net.cn/plugin?id=10479",
                     "android_package_name" : "",
-                    "ios_bundle_id" : "com.lott.k7",
+                    "ios_bundle_id" : "com.bgfdjgdfjdfjgfdgf.app",
                     "isCloud" : true,
                     "bought" : 1,
                     "pid" : "10479",
@@ -131,8 +131,8 @@
         "enable" : false
     },
     "h5" : {
-        "title" : "A8",
-        "domain" : "haiyu",
+        "title" : "K7",
+        "domain" : "k7",
         "router" : {
             "mode" : "hash"
         }
@@ -151,7 +151,8 @@
             "pages/subNVue/extra7.nvue" : {},
             "pages/subNVue/extra8.nvue" : {},
             "pages/subNVue/extra9.nvue" : {},
-            "pages/subNVue/extra10.nvue" : {}
+            "pages/subNVue/extra10.nvue" : {},
+            "pages/subNVue/extra11.nvue" : {}
         }
     }
 }
